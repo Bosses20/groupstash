@@ -18,8 +18,9 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-20 px-4 bg-secondary">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-32 px-4 bg-gradient-to-br from-[#E5DEFF] to-[#F2FCE2] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501854140801-50d01698950b')] bg-cover bg-center opacity-5" />
+      <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
             How GroupStash Works
@@ -32,13 +33,13 @@ export const HowItWorks = () => {
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className="relative p-6 rounded-lg bg-white animate-fade-up"
+              className="relative p-8 rounded-xl backdrop-blur-xl bg-white/40 border border-white/40 shadow-xl animate-fade-up hover:transform hover:scale-105 transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <span className="absolute -top-4 left-6 bg-primary text-white text-sm font-bold px-3 py-1 rounded">
+              <span className="absolute -top-4 left-6 bg-primary text-white text-lg font-bold px-4 py-2 rounded-xl shadow-lg">
                 {step.number}
               </span>
-              <h3 className="text-xl font-semibold text-secondary-foreground mb-2 mt-4">
+              <h3 className="text-xl font-semibold text-secondary-foreground mb-4 mt-4">
                 {step.title}
               </h3>
               <p className="text-secondary-foreground/80">{step.description}</p>
