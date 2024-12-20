@@ -1,4 +1,5 @@
 import { Coins, Users, Bell, ChartBar } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -23,34 +24,62 @@ const features = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
 export const Features = () => {
   return (
-    <section className="py-32 px-4 bg-gradient-secondary relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')] bg-cover bg-center opacity-5" />
+    <section className="py-32 px-4 bg-gradient-to-br from-[#F4F7FF] to-[#FFFFFF] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/77c3df0d-343b-4a57-b9be-13df95cfbec0.png')] bg-cover bg-center opacity-5" />
       <div className="max-w-6xl mx-auto relative">
-        <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Everything You Need to Save Smarter
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Everything You Need to <span className="text-transparent bg-clip-text bg-gradient-accent">Save Smarter</span>
           </h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Powerful features designed to make group savings and lending simple, transparent, and effective.
           </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        </motion.div>
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={feature.title}
-              className="backdrop-blur-xl bg-white/10 p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              variants={item}
+              className="backdrop-blur-xl bg-white/80 p-8 rounded-3xl border border-white/20 hover:border-primary/20 transition-all duration-300 shadow-lg hover:shadow-xl group"
             >
-              <feature.icon className="h-12 w-12 text-white mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <div className="bg-gradient-accent p-3 rounded-2xl inline-block mb-4 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-white/80">{feature.description}</p>
-            </div>
+              <p className="text-gray-600">{feature.description}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
