@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#FFE8D6] to-[#FFF0E5] py-20 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/77c3df0d-343b-4a57-b9be-13df95cfbec0.png')] bg-cover bg-center opacity-5" />
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

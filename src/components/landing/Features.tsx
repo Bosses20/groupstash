@@ -42,7 +42,6 @@ const item = {
 export const Features = () => {
   return (
     <section className="py-32 px-4 bg-gradient-to-br from-[#F4F7FF] to-[#FFFFFF] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/77c3df0d-343b-4a57-b9be-13df95cfbec0.png')] bg-cover bg-center opacity-5" />
       <div className="max-w-6xl mx-auto relative">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

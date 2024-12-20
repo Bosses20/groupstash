@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 export const Footer = () => {
   return (
     <footer className="bg-gradient-primary py-16 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d')] bg-cover bg-center opacity-5" />
       <div className="max-w-6xl mx-auto relative">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="backdrop-blur-xl bg-white/10 p-6 rounded-xl border border-white/20">
