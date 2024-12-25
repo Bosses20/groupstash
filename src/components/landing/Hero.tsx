@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Users, Coins } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#FFE8D6] to-[#FFF0E5] py-20 px-4 overflow-hidden">
       <motion.div 
@@ -44,6 +47,7 @@ export const Hero = () => {
           >
             <Button 
               size="lg" 
+              onClick={() => navigate("/get-started")}
               className="bg-gradient-accent hover:opacity-90 transition-all duration-300 text-white font-semibold px-8 py-6 rounded-2xl shadow-lg group"
             >
               Get Started

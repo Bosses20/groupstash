@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Coins, Bell } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const steps = [
   {
@@ -21,6 +22,8 @@ const steps = [
 ];
 
 const GetStarted = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FFE8D6] to-[#FFF0E5] py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -63,6 +66,7 @@ const GetStarted = () => {
         >
           <Button
             size="lg"
+            onClick={() => navigate("/onboarding")}
             className="bg-gradient-accent hover:opacity-90 transition-all duration-300 text-white font-semibold px-8 py-6 rounded-2xl shadow-lg group"
           >
             Create Your Circle
